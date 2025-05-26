@@ -1,0 +1,22 @@
+# PhoenixCore Configuration
+
+# Punishment settings
+punishments:
+  # Broadcast punishments to all players
+  broadcast: true
+
+  # Default durations for punishments (in milliseconds)
+  # Set to -1 for permanent
+  default-durations:
+    warning: 604800000  # 1 week
+    mute: 3600000       # 1 hour
+    ban: 2592000000     # 30 days
+    ip-ban: -1          # Permanent
+
+  # Templates for punishment messages
+  messages:
+    warning: "&cYou have been warned by %issuer%. Reason: %reason%"
+    mute: "&cYou have been muted by %issuer% for %duration%. Reason: %reason%"
+    kick: "&cYou have been kicked by %issuer%. Reason: %reason%"
+    ban: "&cYou have been banned by %issuer% for %duration%.\nReason: %reason%"
+    ip-ban: "&cYour IP has been banned by %issuer%.\nReason: %reason%"

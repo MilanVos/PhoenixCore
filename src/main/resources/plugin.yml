@@ -3,13 +3,43 @@ version: '${project.version}'
 main: nl.mysticphoenix.phoenixcore.PhoenixCore
 api-version: '1.16'
 authors: [MysticPhoenix]
-description: Core plugin for Phoenix servers
+description: Core plugin for the MysticPhoenix server
 commands:
-  restart:
-    description: Starts a restart countdown for the server
-    usage: /restart <seconds|cancel>
-    permission: phoenixcore.restart
+  punish:
+    description: Punish a player with various punishment types
+    usage: /punish <player> <type> <duration> [reason]
+    aliases: [p, ban, mute, warn, kick]
+    permission: phoenixcore.punish
 permissions:
-  phoenixcore.restart:
-    description: Allows users to use the restart command
+  phoenixcore.punish:
+    description: Allows access to the punish command
     default: op
+  phoenixcore.punish.warning:
+    description: Allows issuing warnings
+    default: op
+  phoenixcore.punish.mute:
+    description: Allows muting players
+    default: op
+  phoenixcore.punish.kick:
+    description: Allows kicking players
+    default: op
+  phoenixcore.punish.ban:
+    description: Allows banning players
+    default: op
+  phoenixcore.punish.ip_ban:
+    description: Allows IP banning players
+    default: op
+  phoenixcore.punish.remove:
+    description: Allows removing punishments
+    default: op
+  phoenixcore.punish.*:
+    description: Allows all punishment operations
+    default: op
+    children:
+      phoenixcore.punish: true
+      phoenixcore.punish.warning: true
+      phoenixcore.punish.mute: true
+      phoenixcore.punish.kick: true
+      phoenixcore.punish.ban: true
+      phoenixcore.punish.ip_ban: true
+      phoenixcore.punish.remove: true
