@@ -1,4 +1,15 @@
 name: PhoenixCore
 version: '${project.version}'
 main: nl.mysticphoenix.phoenixcore.PhoenixCore
-api-version: '1.19'
+api-version: '1.16'
+authors: [MysticPhoenix]
+description: Core plugin for Phoenix servers
+commands:
+  restart:
+    description: Starts a restart countdown for the server
+    usage: /restart <seconds|cancel>
+    permission: phoenixcore.restart
+permissions:
+  phoenixcore.restart:
+    description: Allows users to use the restart command
+    default: op
