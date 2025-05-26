@@ -19,4 +19,27 @@ punishments:
     mute: "&cYou have been muted by %issuer% for %duration%. Reason: %reason%"
     kick: "&cYou have been kicked by %issuer%. Reason: %reason%"
     ban: "&cYou have been banned by %issuer% for %duration%.\nReason: %reason%"
-    ip-ban: "&cYour IP has been banned by %issuer%.\nReason: %reason%"
+
+# VPNGuard settings
+vpnguard:
+  # Enable or disable VPN protection
+  enabled: true
+
+  # API key for IPHub (get one at https://iphub.info)
+  # Free tier allows 1000 requests per day
+  api-key: ""
+
+  # Allow players with permission to bypass VPN check
+  bypass-with-permission: true
+
+  # Message shown to players who are kicked for using a VPN
+  kick-message: "&cVPN/Proxy detected!\n&cPlease disable your VPN/Proxy and try again."
+
+  # How long to cache IP check results (in minutes)
+  cache-time: 120
+
+  # Log VPN check results to console
+  log-results: true
+
+  # Check VPNs asynchronously after login (more reliable but slightly delayed kick)
+  async-check: true

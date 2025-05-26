@@ -4,6 +4,7 @@ import nl.mysticphoenix.phoenixcore.commands.PunishCommand;
 import nl.mysticphoenix.phoenixcore.listeners.PunishmentListener;
 import nl.mysticphoenix.phoenixcore.managers.PunishmentManager;
 import nl.mysticphoenix.phoenixcore.storage.StorageManager;
+import nl.mysticphoenix.phoenixcore.vpn.VPNGuard;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PhoenixCore extends JavaPlugin {
@@ -11,6 +12,7 @@ public final class PhoenixCore extends JavaPlugin {
     private static PhoenixCore instance;
     private StorageManager storageManager;
     private PunishmentManager punishmentManager;
+    private VPNGuard vpnGuard;
 
     @Override
     public void onEnable() {
@@ -21,6 +23,8 @@ public final class PhoenixCore extends JavaPlugin {
         this.storageManager = new StorageManager(this);
 
         this.punishmentManager = new PunishmentManager(this);
+
+        this.vpnGuard = new VPNGuard(this);
 
         getCommand("punish").setExecutor(new PunishCommand(this));
         getCommand("punish").setTabCompleter(new PunishCommand(this));
@@ -50,4 +54,8 @@ public final class PhoenixCore extends JavaPlugin {
     public PunishmentManager getPunishmentManager() {
         return punishmentManager;
     }
-}
+
+    public VPNGuard getVpnGuard() {
+        return vpnGuard;
+    }
+    }
