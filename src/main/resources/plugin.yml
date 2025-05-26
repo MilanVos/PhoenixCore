@@ -1,0 +1,4 @@
+name: PhoenixCore
+version: '${project.version}'
+main: nl.mysticphoenix.phoenixcore.PhoenixCore
+api-version: '1.19'
